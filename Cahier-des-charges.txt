@@ -1,0 +1,23 @@
+Cahier des charges
+
+Rendu : 19/02
+•	Longueur cahier des charges : >= 30 pages 
+•	Pas de diagramme UML sans légende/explication 
+•	Interface graphique obligatoire : dire quelle interface graphique on va utiliser autres que terminale, par exemple application, site web.
+•	Evaluation de la régularité sur les commits. 
+•	Etat de l’art : Utiliser ce qui existe déjà, expliquer ce que son projet à de spécial que celui des autres. 
+
+
+Propositions : 
+-	Contraintes : 
+•	Distance
+•	Horaires 
+•	Préférence alimentaire 
+•	Moyens de transport 
+•	Budget 
+•	Trafique 
+•	Météo 
+-	Besoins de l’user : 
+•	Adresse la plus proche 
+•	Evaluation de l’endroit 
+•	
