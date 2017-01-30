@@ -50,5 +50,5 @@ class NearbySearchExample{
 		 System.out.println (" -> " + arr.getJgetString ("distance") + ", " + arr.getString ("duration"));
 	 }
 	     
-    }
+    }eeeeeeeee
 }
