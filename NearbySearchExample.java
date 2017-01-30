@@ -34,7 +34,7 @@ class NearbySearchExample{
 	 // Construire l'objet JSON
 	 // Toute la documentation de la bibliothèque org.json est disponible sur https://stleary.github.io/JSON-java/index.html
 	 JSONObject j = new JSONObject(html_output);
-
+	 // Finding restaurants 
 	 // Afficher
 	 /*System.out.println ("J'ai envie d'un bon burger autour de Bastille !");
 	 for (int i = 0 ; i < j.length() ; i++){
@@ -42,6 +42,7 @@ class NearbySearchExample{
 	     System.out.println ("  -> " + lieu.getString ("name") + ", " + lieu.getString ("vicinity"));
 	 }
 	 */
+	 // Showing distance between places
 	 System.out.println ("I need to travel from Paris to Orsay !");
 	     JSONObject dist = (j.getJSONArray("rows").getJSONObject (0));
 	     for (int k = 0; k < dist.length(); k++) {
