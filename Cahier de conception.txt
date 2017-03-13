@@ -1,0 +1,14 @@
+Cahier de charges : remarques 
+- Tests (unitaire ou autres) 
+
+Cahier de conception 
+- Diagramme de classes détaillé
+- Faire du technique 
+- Expliquer en détail chaque partie 
+- Arrité (si y a une action qui va se passer plusieurs fois) 
+- Détailler les tests 
+- Description de scénario (avec diagramme) pour les tests 
+- Maquette 
+- Hierarchie de l'application 
+- Bien vérifier les outils
+
