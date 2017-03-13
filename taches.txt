@@ -1,0 +1,20 @@
+Classes : 
+
+- Client 
+- Destination 
+- API google 
+- Demande (Besoins de l'user) 
+- Moyens de transport 
+
+Les tâches à faire 
+
+Phong : 
+Classe Client, rajout de nouvelles classes 
+
+Baldé : 
+Destination, API
+
+Youcef : 
+Demande, Moyens de transport 
+
+Siqi : ?
