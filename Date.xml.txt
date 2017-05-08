@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="adresse"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:gravity="center"
+        />
+
+    <EditText
+        android:id="@+id/adresse1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Adresse 1"
+        android:inputType="textPostalAddress"
+        android:textColorLink="@color/colorPrimary"
+        />
+
+    <EditText
+
+        android:id="@+id/adresse2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Adresse 2"
+        android:inputType="textPostalAddress"
+        android:textColorLink="@color/colorPrimary"
+        />
+
+    <EditText
+        android:id="@+id/adresse3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Adresse 3"
+        android:inputType="textPostalAddress"
+        />
+
+    <TextView
+
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="preferences"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:gravity="center"
+        />
+
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+
+        android:id="@+id/pref2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hindou"
+        />
+
+            <CheckBox
+
+            android:id="@+id/pref3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Halal"
+            />
+
+        <CheckBox
+
+        android:id="@+id/pref1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Végétarien"
+        />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <CheckBox
+
+            android:id="@+id/pref4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Casher"
+            />
+
+                <CheckBox
+
+        android:id="@+id/pref5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Healthy"
+        />
+
+                <CheckBox
+
+                    android:id="@+id/pref6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Indifférent"
+
+                    android:layout_weight="0.12" />
+
+
+            </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.54">
+
+        <EditText
+
+            android:id="@+id/horaire"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:hint="Horaire"
+            android:inputType="time"
+            android:textColorLink="@color/colorPrimary"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:text="Choisir Une Date "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="175dp" />
+
+    <Button
+    android:id="@+id/envoyer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:text="soumettre"
+        android:textSize="14sp" />
+
+</LinearLayout>

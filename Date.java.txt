@@ -1,0 +1,85 @@
+package com.myapplication3.lasla.myapplication3;
+        import android.app.DatePickerDialog;
+        import android.app.Dialog;
+        import android.net.Uri;
+        import android.support.v7.app.AppCompatActivity;
+        import android.os.Bundle;
+        import android.view.View;
+        import android.widget.Button;
+        import android.widget.DatePicker;
+        import android.widget.Toast;
+        import java.util.Calendar;
+
+        import static android.icu.util.Calendar.*;
+
+public class MainActivity extends AppCompatActivity {
+
+    Button bot;
+    int year_x, month_x, day_x;
+    static final int DIALOG_ID = 0;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        final Calendar cal = Calendar.getInstance();
+        this.year_x = cal.get(Calendar.YEAR);
+        this.month_x = cal.get(Calendar.MONTH);
+        this.day_x = cal.get(Calendar.DAY_OF_MONTH);
+        AfficheDialogOnClick();
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+
+    }
+
+
+    public void AfficheDialogOnClick() {
+
+        bot = (Button) findViewById(R.id.btn);
+        bot.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        showDialog(DIALOG_ID);
+                    }
+                }
+        );
+    }
+
+    @Override
+    protected Dialog onCreateDialog(int id) {
+
+        if (id == DIALOG_ID)
+            return new DatePickerDialog(this, Calendrier, year_x, month_x, day_x);
+        return null;
+    }
+
+    private DatePickerDialog.OnDateSetListener Calendrier = new DatePickerDialog.OnDateSetListener() {
+
+
+        @Override
+        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+
+            year_x = year;
+            month_x = month+1 ;
+            day_x = dayOfMonth;
+            if(year>=Calendar.getInstance().get(Calendar.YEAR) && month>=Calendar.getInstance().get(Calendar.MONTH) &&
+                    dayOfMonth>=Calendar.getInstance().get(Calendar.DAY_OF_MONTH) )
+                Toast.makeText(MainActivity.this, day_x+ "/" + month_x+"/" + year_x, Toast.LENGTH_LONG).show();
+            else {
+
+                Toast.makeText(MainActivity.this,"Merci de Choisir une date récente s'il vous plaît  ", Toast.LENGTH_LONG).show();
+            }
+        }
+    };
+
+
+
+
+}
