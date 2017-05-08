@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         //cast objects
         time_picker = (TimePicker)findViewById(R.id.timePicker);
         button_show_time = (Button)findViewById(R.id.Show_Time);
-        //option: afficher l'heure a l'interieur de minute 
+        //option: afficher l'heure a l'interieur de minute
         time_picker.setIs24HourView(true);
         //onClick action
         button_show_time.setOnClickListener(
