@@ -3,16 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:weightSum="1"
+    tools:context="com.example.alhas.glaproject.MainActivity"
+    android:baselineAligned="false">
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/adresse"
-        android:textStyle="bold"
-        android:textColor="#000000"
         android:gravity="center"
-        />
+        android:text="adresse"
+        android:textColor="#000000"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/adresse1"
@@ -20,8 +26,7 @@
         android:layout_height="wrap_content"
         android:hint="Adresse 1"
         android:inputType="textPostalAddress"
-        android:textColorLink="@color/colorPrimary"
-        />
+        android:textColorLink="@color/colorPrimary" />
 
     <EditText
         android:id="@+id/adresse2"
@@ -29,92 +34,77 @@
         android:layout_height="wrap_content"
         android:hint="Adresse 2"
         android:inputType="textPostalAddress"
-        android:textColorLink="@color/colorPrimary"
-        />
+        android:textColorLink="@color/colorPrimary" />
 
     <EditText
         android:id="@+id/adresse3"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="Adresse 3"
-        android:inputType="textPostalAddress"
-        />
+        android:inputType="textPostalAddress" />
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/prefs"
-        android:textStyle="bold"
-        android:textColor="#000000"
         android:gravity="center"
-        />
+        android:text="preferences"
+        android:textColor="#000000"
+        android:textStyle="bold" />
 
     <CheckBox
         android:id="@+id/pref1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Végétarien"
-        />
+        android:text="Végétarien" />
 
     <CheckBox
         android:id="@+id/pref2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hindou"
-        />
+        android:text="Hindou" />
 
     <CheckBox
         android:id="@+id/pref3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Halal"
-        />
+        android:text="Halal" />
 
     <CheckBox
         android:id="@+id/pref4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cacher"
-        />
+        android:text="Cacher" />
 
     <CheckBox
         android:id="@+id/pref5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Healthy"
-        />
+        android:text="Healthy" />
 
     <CheckBox
         android:id="@+id/pref6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Indifférent"
-        />
+        android:text="Indifférent" />
 
-    <EditText
-        android:id="@+id/horaire"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:hint="Horaire"
-        android:inputType="time"
-        android:textColorLink="@color/colorPrimary" />
 
-    <EditText
-        android:id="@+id/date"
-        android:layout_width="fill_parent"
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:hint="Date"
-        android:inputType="date"
-        />
+        android:text="Choisir Horaire"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="416dp" />
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choisir Une Date " />
 
     <Button
         android:id="@+id/envoyer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/soumettre"
-        />
-
+        android:text="soumettre" />
 </LinearLayout>
