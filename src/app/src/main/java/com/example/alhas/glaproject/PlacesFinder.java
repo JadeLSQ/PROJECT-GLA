@@ -1,10 +1,13 @@
 package com.example.alhas.glaproject;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
 
 import org.json.JSONObject;
 import org.w3c.dom.Document;
@@ -23,6 +26,7 @@ import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathFactory;
 
 public class PlacesFinder extends Activity {
+    private TextView result;
 
     private static final String PLACE_URL_API ="https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
     private static final String GOOGLE_API_KEY = "AIzaSyDoPAIAMVrM_b4WxeQSS0j1KalXcf8S58o";
@@ -32,34 +36,78 @@ public class PlacesFinder extends Activity {
     String recupAdresse2;
     String recupAdresse3;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Récupération des adresses
+        Bundle extras = getIntent().getExtras();
+        recupAdresse1 = extras.getString("send1");
+        recupAdresse2 = extras.getString("send2");
+        recupAdresse3 = extras.getString("send3");
+
+        result = (TextView)findViewById(R.id.result);
+/*        String res = null;
+        try {
+            res = getRestaurantAddress();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+*/
+        result.setText("L'adresse du resto est " );
+    }
+
+
+    public Double[] centre() throws  Exception{
+        String[] str1 = getLatLongPositions(recupAdresse1);
+        String[] str2 = getLatLongPositions(recupAdresse2);
+        String[] str3 = getLatLongPositions(recupAdresse3);
+
+        Double lat1 = Double.parseDouble(str1[0]);
+        Double lat2 = Double.parseDouble(str2[0]);
+        Double lat3 = Double.parseDouble(str3[0]);
+
+        Double lng1 = Double.parseDouble(str1[1]);
+        Double lng2 = Double.parseDouble(str2[1]);
+        Double lng3 = Double.parseDouble(str3[1]);
+
+        Double sommeLat = (lat1 + lat2 + lat3) / 3;
+        Double sommeLng = (lng1 + lng2 + lng3) / 3;
+
+        Double[] points = {sommeLat, sommeLng};
+        //LatLng points = new LatLng(sommeLat, sommeLng);
+        return points;
+    }
+
     private String createUrlForRestaurant() throws Exception {
-        String[] str = getLatLongPositions(recupAdresse1);
-        String lat = str[0];
-        String lng = str[1];
+        Double[] points = centre();
+        Double lat = points[0];
+        Double lng = points[1];
         String loc = lat+","+lng;
         long rayon = 20000; // 20km
-        return PLACE_URL_API + "location=" + loc + "&radius=" + rayon + "&type=restaurant" + "&keyword=halal" + "&key=" + GOOGLE_API_KEY;
+        return PLACE_URL_API + "location=" + loc + "&radius=" + rayon + "&type=restaurant" + "&keyword=halal|cacher" + "&key=" + GOOGLE_API_KEY;
     }
 
     private String createUrlForBar() throws Exception {
-        String[] str = getLatLongPositions(recupAdresse1);
-        String lat = str[0];
-        String lng = str[1];
+        Double[] points = centre();
+        Double lat = points[0];
+        Double lng = points[1];
         String loc = lat+","+lng;
         long rayon = 20000; // 20km
-        return PLACE_URL_API + "location=" + loc + "&radius=" + rayon + "&type=bar" + "&key=" + GOOGLE_API_KEY;
+        return PLACE_URL_API + "location=" + loc + "&radius=" + rayon + "&type=bar" + GOOGLE_API_KEY;
     }
 
     private String createUrlForNight_club() throws Exception {
-        String[] str = getLatLongPositions(recupAdresse1);
-        String lat = str[0];
-        String lng = str[1];
+        Double[] points = centre();
+        Double lat = points[0];
+        Double lng = points[1];
         String loc = lat+","+lng;
         long rayon = 20000; // 20km
-        return PLACE_URL_API + "location=" + loc + "&radius=" + rayon + "&type=night_club" + "&key=" + GOOGLE_API_KEY;
+        return PLACE_URL_API + "location=" + loc + "&radius=" + rayon + "&type=night_club" + GOOGLE_API_KEY;
     }
 
-    public void getRestaurantAddress() throws Exception {
+    public String getRestaurantAddress() throws Exception {
         String getUrl = createUrlForRestaurant();
         URL url = new URL(getUrl);
         Scanner scan = new Scanner(url.openStream());
@@ -69,10 +117,11 @@ public class PlacesFinder extends Activity {
         scan.close();
 
         JSONObject jsonFile = new JSONObject(html_output);
-        for (int i = 0 ; i < jsonFile.length() ; i++){
-            JSONObject lieu = (jsonFile.getJSONArray("results")).getJSONObject (i);
-            String res = lieu.getString ("name") + ", " + lieu.getString ("vicinity");
-        }
+
+        JSONObject lieu = (jsonFile.getJSONArray("results")).getJSONObject (0);
+        String resultat = lieu.getString ("name") + ", " + lieu.getString ("vicinity");
+        return resultat;
+
     }
 
     public void getBarAddress() throws Exception {
@@ -105,18 +154,6 @@ public class PlacesFinder extends Activity {
             JSONObject lieu = (jsonFile.getJSONArray("results")).getJSONObject (i);
             String res = lieu.getString ("name") + ", " + lieu.getString ("vicinity");
         }
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        // Récupération des adresses
-        Bundle extras = getIntent().getExtras();
-        recupAdresse1 = extras.getString("send1");
-        recupAdresse2 = extras.getString("send2");
-        recupAdresse3 = extras.getString("send3");
     }
 
         public  String[] getLatLongPositions(String address) throws Exception
