@@ -2,7 +2,7 @@
 
 Samples that use the Google Places API for Android.
 
-Ce repo PROJECT-GLA/src/app/src/main/java/com/example/alhas/glaproject/ contient les fichiers suivants: 
+PROJECT-GLA/src/app/src/main/java/com/example/alhas/glaproject/ contient les fichiers suivants: 
  1. Cahier des charges
  2. Cahier de conception 
  3. src qui contient tous les fichiers de notre applications qui sont - 
@@ -11,6 +11,13 @@ Ce repo PROJECT-GLA/src/app/src/main/java/com/example/alhas/glaproject/ contient
 MainActivity.java	: la classe principale
 MapsActivity.java	: la classe permettant l'affichage des resultats
 PlacesFinder.java	: la classe effectuant les traitements sur les recherches des adresses
+
+PROJECT-GLA/src/app/src/main/res/layout/ contient les fichiers suivants: 
+ 1. Cahier des charges
+ 2. Cahier de conception 
+ 3. src qui contient tous les fichiers de notre applications qui sont - 
+
+activity_main.xml : l'interface d'utilisation 
 
 # Pre-requisites
 
