@@ -5,13 +5,7 @@ Samples that use the Google Places API for Android.
 Ce repo PROJECT-GLA/src/app/src/main/java/com/example/alhas/glaproject/ contient les fichiers suivants: 
  1. Cahier des charges
  2. Cahier de conception 
- 3. src qui contient tous les fichiers de notre applications dont 
-
-PlacePicker: Uses the PlacePicker widget and the Geo Data API to select a place and retrieve its details.
-PlaceCompleteActivity: Uses an Intent to open a fullscreen autocomplete widget from the Place Autocomplete API.
-PlaceCompleteFragment: Uses a widget (PlaceAutocompleteFragment) provided by the Place Autocomplete API to display autocomplete suggestions.
-PlaceCompleteAdapter: Implements an Android AutoCompleteTextView backed by the Place Autocomplete API.
-Note that each folder contains a distinct sample and must be imported separately.
+ 3. src qui contient tous les fichiers de notre applications qui sont - 
 
 
 MainActivity.java	: la classe principale
@@ -23,3 +17,15 @@ PlacesFinder.java	: la classe effectuant les traitements sur les recherches des 
 Android SDK v23 (preferable)
 Android Build Tools v23.0.2
 Android Support Repository
+
+# Commencer
+
+Cet exemple utilise le système de compilation Gradle.
+
+Téléchargez d'abord les échantillons en clonant ce dépôt ou en téléchargeant un instantané archivé. (Voir les options sur le côté droit.)
+
+Dans Android Studio, utilisez l'option "Importer un projet Android non-Android" ou "Importer un projet". Sélectionnez ensuite src. Si vous êtes invité à configurer Gradle, acceptez les paramètres par défaut.
+
+Vous pouvez également utiliser la commande "gradlew build" pour créer directement le projet.
+
+N'oubliez pas d'ajouter votre clé API à AndroidManifest.xml. (Voir https://developers.google.com/places/android/signup)
