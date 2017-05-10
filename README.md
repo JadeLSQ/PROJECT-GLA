@@ -18,6 +18,7 @@ PROJECT-GLA/src/app/src/main/res/layout/ contient les fichiers suivants:
  3. src qui contient tous les fichiers de notre applications qui sont - 
 
 activity_main.xml : l'interface d'utilisation 
+activity_maps.xml : l'affichage de la carte 
 
 # Pre-requisites
 
