@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GoogleMapAPI</string>
+    <string name="title_activity_maps">GlaProject</string>
+    <string name="adresse">Adresse</string>
+    <string name="prefs">Préférences alimentaires</string>
+    <string name="soumettre">Soumettre</string>
+    <string name="adresse_resto">Adresse restaurant</string>
+    <string name="adresse_bar">Adresse bar</string>
+    <string name="adresse_boite">Adresse boite de nuit</string>
+    <string name="vos_adresses">Voici les adresses que vous avez soumis</string>
+</resources>
