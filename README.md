@@ -1,6 +1,6 @@
 # PROJECT-GLA
 
-Samples that use the Google Places API for Android.
+L'application pour fêter le retrouvaille des trois amis, afin de trouver un bar, un restanrant et une boite de nuit les plus proches des leurs adresses saisies. 
 
 PROJECT-GLA/src/app/src/main/java/com/example/alhas/glaproject/ contient les fichiers suivants: 
  1. Cahier des charges
